@@ -1,6 +1,7 @@
 Using log.io node package
+Log.io is a log management tool that monitors the system and provides real-time information of the logs. It is a simple and effective application built on top of Node.js and Socket.io.
 
-docker build -t log_api .
+		docker build -t log_api .
 
 For local host :
 
