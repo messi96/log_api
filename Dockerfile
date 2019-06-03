@@ -17,4 +17,4 @@ RUN cd /root/.log.io/
 
 EXPOSE 28778
 
-CMD ["log.io-server &","log.io-harvester"]
+CMD ["log.io-server","log.io-harvester"]
