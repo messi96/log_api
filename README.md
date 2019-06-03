@@ -11,3 +11,6 @@ For local host :
 For Remote hosts :
 
 		docker run -p 28778:28778 -e server_host=127.0.0.1 log_api
+
+
+Web interface will be accessible on your local machine @ http://localhost:28778 
