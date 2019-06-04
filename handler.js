@@ -14,8 +14,7 @@ var send_log = function(msg) {
         path: '/',
     });
     req.sendBody(msg, encoding="ascii");
-//    req.finish();
-    res.send();
+    req.finish();
 }
 
 var monitor_file = function(filename) {
