@@ -21,10 +21,6 @@ Now, once you append some text to log.txt file
 
 		echo "23" >> log.txt 
 
-
-node process will tail the log file on cli, which can be forwarded to browser If we want!
-
-
 Input ::
 
 		root@host:~/logs_grofers/log_api# echo 98 >> log.txt
