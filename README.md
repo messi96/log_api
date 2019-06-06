@@ -1,16 +1,50 @@
-Using log.io node package
-Log.io is a log management tool that monitors the system and provides real-time information of the logs. It is a simple and effective application built on top of Node.js and Socket.io.
+Node api for real time log monitoring
 
-		docker build -t log_api .
+1. clone the code
+2. server-side run 
 
-For local host :
-
-		docker run -p 28778:28778 log_api
-
-
-For Remote hosts :
-
-		docker run -p 28778:28778 -e server_host=127.0.0.1 log_api
+		root@host:~/logs_grofers/log_api# node server.js
+		Server running at http://127.0.0.1:3000/
 
 
-Web interface will be accessible on your local machine @ http://localhost:28778 
+3. client-side run
+
+		root@host:~/logs_grofers/log_api# node client.js log.txt
+		sending logs to localhost:3000
+		monitor_file: monitoring log.txt
+		tailing logs.. 
+		23
+
+
+
+Now, once you append some text to log.txt file
+
+		echo "23" >> log.txt 
+
+
+node process will tail the log file on cli, which can be forwarded to browser If we want!
+
+
+Input ::
+
+		root@host:~/logs_grofers/log_api# echo 98 >> log.txt
+		root@host:~/logs_grofers/log_api# echo fossil_fuel >> log.txt
+		root@host:~/logs_grofers/log_api# echo elements >> log.txt
+
+
+Output on client side ::
+
+
+		root@pwned:~/logs_grofers/log_api# node client.js log.txt
+		sending logs to localhost:3000
+		monitor_file: monitoring log.txt
+		tailing logs.. 
+		23
+
+		tailing logs.. 98
+
+		tailing logs.. fossil_fuel
+
+		tailing logs.. elements
+
+
