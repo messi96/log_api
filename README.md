@@ -10,7 +10,7 @@ Node api for real time log monitoring
 3. client-side run
 
 		root@host:~/logs_grofers/log_api# node client.js log.txt
-		sending logs to localhost:3000
+		logs from localhost:3000
 		monitor_file: monitoring log.txt
 		tailing logs.. 
 		23
@@ -20,6 +20,7 @@ Node api for real time log monitoring
 Now, once you append some text to log.txt file
 
 		echo "23" >> log.txt 
+
 
 Input ::
 
@@ -32,7 +33,7 @@ Output on client side ::
 
 
 		root@pwned:~/logs_grofers/log_api# node client.js log.txt
-		sending logs to localhost:3000
+		logs from localhost:3000
 		monitor_file: monitoring log.txt
 		tailing logs.. 
 		23
