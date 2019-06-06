@@ -32,7 +32,7 @@ Input ::
 Output on client side ::
 
 
-		root@pwned:~/logs_grofers/log_api# node client.js log.txt
+		root@host:~/logs_grofers/log_api# node client.js log.txt
 		logs from localhost:3000
 		monitor_file: monitoring log.txt
 		tailing logs.. 
@@ -43,5 +43,35 @@ Output on client side ::
 		tailing logs.. fossil_fuel
 
 		tailing logs.. elements
+
+
+Confirm with other parameters ::
+
+		root@host:~/logs_grofers/log_api# node client.js log.txt localhost 4000
+		logs from localhost:4000
+		monitor_file: monitoring log.txt
+		events.js:174
+		      throw er; // Unhandled 'error' event
+		      ^
+
+		Error: connect ECONNREFUSED 127.0.0.1:4000
+
+
+since the server host is localhost:3000 
+
+
+		root@pwned:~/logs_grofers/log_api# node client.js log.txt localhost 3000
+		logs from localhost:3000
+		monitor_file: monitoring log.txt
+		tailing logs.. 
+		23
+		98
+		fossil_fuel
+		elements
+
+		tailing logs.. qwerty
+
+		tailing logs.. owned
+
 
 

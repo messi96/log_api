@@ -24,8 +24,6 @@ var send_log = function(data) {
           console.log(body);
        });
     });
-    // console.log(msg)
-    // req.(msg, encoding="ascii");
     req.write(data);
     req.end();
 }
