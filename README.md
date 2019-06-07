@@ -118,7 +118,7 @@ reading /var/log/dpkg.log file
 
 server-side
 	
-	spawned up a new container for testing.. and got our server.js file on it. 
+	spawned up a new container for testing.. and got our server.js/handler.js file on it. 
 
 		root@abe22242a2b3:~# cat /var/log/dpkg.log ^C
 		root@abe22242a2b3:~# ls -al /var/log/dpkg.log
