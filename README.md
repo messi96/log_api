@@ -5,8 +5,8 @@ Node api for real time log monitoring
 	
 	server is one of my docker container with ip 172.17.0.2 that is reachable from my client machine (192.168.0.102)
 
-		root@server:~/logs_grofers/log_api# docker run -it node /bin/bash
-		root@server:/# uname -a 
+		root@host:~/logs_grofers/log_api# docker run -it node /bin/bash
+		root@d77fbee280bd:/# uname -a 
 		Linux d77fbee280bd 4.18.0-kali2-amd64 #1 SMP Debian 4.18.10-2kali1 (2018-10-09) x86_64 GNU/Linux
 
 	we have our server.js file & log.txt (or any log file on the server side)
