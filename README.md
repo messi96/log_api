@@ -24,7 +24,7 @@ Node api for real time log monitoring
 	server side : 
 
 		root@d77fbee280bd:~# node server.js log.txt 192.168.0.102 3000
-		logs from 192.168.0.102:3000
+		sending logs to 192.168.0.102:3000
 		monitor_file: monitoring log.txt
 		tailing logs.. 123
 
@@ -42,7 +42,7 @@ Node api for real time log monitoring
 		root@d77fbee280bd:~# echo "owned" >> log.txt
 
 		root@d77fbee280bd:~# node server.js log.txt 192.168.0.102 3000
-		logs from 192.168.0.102:3000
+		sending logs to 192.168.0.102:3000
 		monitor_file: monitoring log.txt
 		tailing logs.. 123
 
@@ -89,7 +89,7 @@ appending log file :
 server-side console output :
 
 		root@d77fbee280bd:~# node server.js log.txt 192.168.0.102 3000
-		logs from 192.168.0.102:3000
+		sending logs to 192.168.0.102:3000
 		monitor_file: monitoring log.txt
 		tailing logs.. 123
 		owned
@@ -111,4 +111,6 @@ client-side result :
 		Tailing logs : one_plus
 
 
+
+If Running on same machine.. just use -->  node server.js log.txt 
 

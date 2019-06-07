@@ -4,7 +4,7 @@ var http = require("http"),
     port = (process.argv[4]) ? parseInt(process.argv[4]) : 3000;
 const { spawn } = require('child_process');
 
-console.log("logs from " + hostname + ":" + port);
+console.log("sending logs to " + hostname + ":" + port);
 
 var send_log = function(data) {
     var req = http.request({
