@@ -1,18 +1,25 @@
 var http = require("http");
+var hostname = '0.0.0.0';
+var port = 3000;
 
-var record_message = function(request,msg) {
- 	console.log("received: " + msg);
-};
-
-http.createServer(function (request, response) {
+const server = http.createServer((req, res) => {
 	var content = "";
-	request.addListener("body", function(chunk) {
+
+	req.on('data', chunk => {
+		// console.log(`Data chunk available: ${chunk}`);
 		content += chunk;
-	    });
-	request.addListener("complete", function() {
-		record_message(request, content);
-		response.sendHeader(200, {"Content-Type": "text/plain"});
-		response.sendBody("stored message (" + content.length + ")");
-		response.finish();
-	    });
-    }).listen(8000);
+		console.log('Tailing logs : '+content)
+		
+	})
+    req.on('end', () => {
+    	res.statusCode = 200;
+	    res.setHeader('Content-Type', 'text/plain');
+	    res.end("tailing logs.. " + content);
+    	//end of data
+  	})
+ 
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Client Server listening at http://${hostname}:${port}/`);
+}); 
