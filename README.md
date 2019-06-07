@@ -114,3 +114,36 @@ client-side result :
 
 If Running on same machine.. just use -->  node server.js log.txt 
 
+reading /var/log/dpkg.log file
+
+server-side
+	
+	spawned up a new container for testing.. and got our server.js file on it. 
+
+		root@abe22242a2b3:~# cat /var/log/dpkg.log ^C
+		root@abe22242a2b3:~# ls -al /var/log/dpkg.log
+		-rw-r--r-- 1 root root 191687 May  8 01:41 /var/log/dpkg.log
+		root@abe22242a2b3:~# ls -l
+		total 4
+		-rw-r--r-- 1 root root 1089 Jun  7 01:15 handler.js
+		root@abe22242a2b3:~# node handler.js /var/log/dpkg.log 192.168.0.102 3000
+		sending logs to 192.168.0.102:3000
+		monitor_file: monitoring /var/log/dpkg.log
+
+
+client-side result : 
+
+		root@host:~/logs_grofers/log_api# node logs.js 
+		Client Server listening at http://0.0.0.0:3000/
+		Tailing logs : 2019-05-08 01:41:50 configure libmagickwand-dev:all 8:6.9.7.4+dfsg-11+deb9u7 <none>
+		2019-05-08 01:41:50 status unpacked libmagickwand-dev:all 8:6.9.7.4+dfsg-11+deb9u7
+		2019-05-08 01:41:50 status half-configured libmagickwand-dev:all 8:6.9.7.4+dfsg-11+deb9u7
+		2019-05-08 01:41:50 status installed libmagickwand-dev:all 8:6.9.7.4+dfsg-11+deb9u7
+		2019-05-08 01:41:50 trigproc libc-bin:amd64 2.24-11+deb9u4 <none>
+		2019-05-08 01:41:50 status half-configured libc-bin:amd64 2.24-11+deb9u4
+		2019-05-08 01:41:50 status installed libc-bin:amd64 2.24-11+deb9u4
+		2019-05-08 01:41:50 trigproc libgdk-pixbuf2.0-0:amd64 2.36.5-2+deb9u2 <none>
+		2019-05-08 01:41:50 status half-configured libgdk-pixbuf2.0-0:amd64 2.36.5-2+deb9u2
+		2019-05-08 01:41:50 status installed libgdk-pixbuf2.0-0:amd64 2.36.5-2+deb9u2
+
+real-time tailing of logs!
