@@ -21,14 +21,14 @@ Node api for real time log monitoring
 		root@host:~/logs_grofers/log_api# node logs.js
 		Client Server listening at http://0.0.0.0:3000/			(this is 192.168.0.102)
 
-	server side : 
+	Server side : 
 
 		root@d77fbee280bd:~# node server.js log.txt 192.168.0.102 3000
 		sending logs to 192.168.0.102:3000
 		monitor_file: monitoring log.txt
 		tailing logs.. 123
 
-	client side : 
+	Client side : 
 		
 		root@host:~/logs_grofers/log_api# node logs.js
 		Client Server listening at http://0.0.0.0:3000/
@@ -57,7 +57,8 @@ Node api for real time log monitoring
 
 		Tailing logs : owned
 
-       Server side : 
+
+        Server side : 
 	
         	monitor_file: monitoring log.txt
 		tailing logs.. 123
@@ -66,7 +67,7 @@ Node api for real time log monitoring
 
 		tailing logs.. testing_server_side
 
-       Client side : 
+        Client side : 
 
 		root@host:~/logs_grofers/log_api# node logs.js
 		Client Server listening at http://0.0.0.0:3000/
